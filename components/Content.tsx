@@ -9,7 +9,7 @@ const { Search } = Input
 
 const Content = () => {
   return (
-    <div className='bg-gray-200 p-4 w-full'>
+    <div className='bg-gray-100 p-4 w-full'>
         <div className='bg-white rounded-md p-6'>
             <div className='flex justify-between mb-6'>
                 <div className='flex gap-2 divide-x divide-black'>
