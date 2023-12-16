@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Input } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
+import ContentTable from './ContentTable';
 
 const { Search } = Input
 
@@ -56,7 +57,9 @@ const Content = () => {
                     </div>
                 </div>
             </div>
-            <div>TABLE</div>
+            <div>
+                <ContentTable/>
+            </div>
         </div>
     </div>
   )
