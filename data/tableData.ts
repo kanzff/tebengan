@@ -1,4 +1,4 @@
-interface DataType {
+export interface DataType {
     id: {
         user_id: string,
         employee_id?: string,
@@ -28,7 +28,7 @@ interface DataType {
     voucher?: string
 }
 
-const data: DataType[] = [
+export const tableData: DataType[] = [
     {
         id: {
             user_id: '457',
