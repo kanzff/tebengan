@@ -37,8 +37,8 @@ export const tableData: DataType[] = [
             first_login_at: '22 Nov 2022' 
         },
         status: {
-            last_booking_at: '',
-            last_active: '',
+            last_booking_at: '-',
+            last_active: '-',
             status: 'Lead',
         },
         name: {

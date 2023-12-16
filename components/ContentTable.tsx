@@ -11,6 +11,11 @@ interface DataType {
     created_at: string,
     first_login_at?: string
   };
+  status: {
+    last_booking_at: string,
+    last_active?: string,
+    status: string
+  }
   name: string;
   age: number;
   address: string;
@@ -21,9 +26,27 @@ const columns: ColumnsType<DataType> = [
     title: 'ID',
     dataIndex: 'id',
     render: (id: any) => (
-      <div>
-        <a>{id.user_id}</a>
-        <a>{id.user_id}</a>
+      <div className='text-gray-600'>
+        <p>User ID</p>
+        <p className='font-bold text-black pb-1'>{id.user_id}</p>
+        <p>Employee ID</p>
+        <p className='font-bold text-black pb-1'>{id.employee_id}</p>
+        <p>Date created</p>
+        <p className='pb-1'>{id.created_at}</p>
+        <p>First app login on</p>
+        <p>{id.first_login_at}</p>
+      </div>
+    ) 
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+    render: (status: any) => (
+      <div className='text-gray-600'>
+        <p>{status.status}</p>
+        <p>{status.last_active}</p>
+        <p>Last booking</p>
+        <p>{status.last_booking_at}</p>
       </div>
     ) 
   },
@@ -91,6 +114,11 @@ const data: DataType[] = [
       created_at: '9 Jun 2022',
       first_login_at: '22 Nov 2022' 
     },
+    status: {
+      last_booking_at: '-',
+      last_active: '-',
+      status: 'Lead',
+  },
     name: 'John Brown',
     age: 32,
     address: 'New York No. 1 Lake Park',
