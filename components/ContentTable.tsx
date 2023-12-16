@@ -16,7 +16,16 @@ interface DataType {
     last_active?: string,
     status: string
   }
-  name: string;
+  name: {
+    name: string,
+    gender: string,
+    company?: string,
+    department?: string,
+  };
+  contact: {
+    mobile_number: string,
+    email: string,
+  }
   age: number;
   address: string;
 }
@@ -28,9 +37,9 @@ const columns: ColumnsType<DataType> = [
     render: (id: any) => (
       <div className='text-gray-600'>
         <p>User ID</p>
-        <p className='font-bold text-black pb-1'>{id.user_id}</p>
+        <p className='font-bold text-black pb-2'>{id.user_id}</p>
         <p>Employee ID</p>
-        <p className='font-bold text-black pb-1'>{id.employee_id}</p>
+        <p className='font-bold text-black pb-2'>{id.employee_id}</p>
         <p>Date created</p>
         <p className='pb-1'>{id.created_at}</p>
         <p>First app login on</p>
@@ -43,7 +52,7 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'status',
     render: (status: any) => (
       <div className='text-gray-600'>
-        <p>{status.status}</p>
+        <p className='border rounded-lg max-w-[40px] text-center border-blue-500 font-bold text-blue-500'>{status.status}</p>
         <p>{status.last_active}</p>
         <p>Last booking</p>
         <p>{status.last_booking_at}</p>
@@ -53,16 +62,28 @@ const columns: ColumnsType<DataType> = [
   {
     title: 'Name',
     dataIndex: 'name',
-    render: (text: string) => (
+    render: (name: any) => (
       <div>
-        <a>{text}</a>
-        <a>{text}</a>
+        <p className='pb-2 font-semibold'>{name.name}</p>
+        <p className='pb-2 text-gray-600'>{name.gender}</p>
+        <p className='text-gray-600'>Company</p>
+        <p className='pb-2 font-semibold'>{name.company}</p>
+        <p className='text-gray-600'>Department</p>
+        <p className='font-semibold'>{name.department}</p>
       </div>
     ) 
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
+    title: 'Contact',
+    dataIndex: 'contact',
+    render: (contact: any) => (
+      <div>
+        <p className='text-gray-600'>Mobile Number</p>
+        <p className='pb-2 font-semibold'>{contact.mobile_number}</p>
+        <p className='text-gray-600'>Email</p>
+        <p className='pb-2 font-semibold'>{contact.email}</p>
+      </div>
+    ) 
   },
   {
     title: 'Address',
@@ -119,7 +140,16 @@ const data: DataType[] = [
       last_active: '-',
       status: 'Lead',
   },
-    name: 'John Brown',
+    name: {
+      name: 'Ruben Tornado',
+      gender: 'Male',
+      company: 'SKTrans',
+      department: 'Processing'
+    },
+    contact: {
+      mobile_number: '+62 812 3546 7890',
+      email: 'rubentornado@email.com'
+    },
     age: 32,
     address: 'New York No. 1 Lake Park',
   },

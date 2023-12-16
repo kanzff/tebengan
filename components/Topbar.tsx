@@ -6,7 +6,7 @@ const Topbar = () => {
   return (
     <div className="topbar w-full flex h-[80px] items-center text-white bg-[#1D8AF5] fixed p-2">
       <div className="logo-section w-[240px] text-center">
-        <div className="text-xl">Tebengan</div>
+        <div className="text-xl w-[240px]">Tebengan</div>
         <div className="text-xs">Shuttle Dashboard</div>
       </div>
       <div className="header-section w-full flex justify-between p-4">

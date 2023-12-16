@@ -43,7 +43,7 @@ export const tableData: DataType[] = [
         },
         name: {
             name: 'Ruben Tornado',
-            gender: 'male',
+            gender: 'Male',
             company: 'SKTrans',
             department: 'Processing'
         },
