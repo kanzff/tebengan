@@ -2,18 +2,11 @@
 
 import React from 'react'
 import { Image, Layout, Menu } from 'antd'
-import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 
 const  { Sider } = Layout
 
 const Sidebar = () => {
-    // const items2 = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-    //     (icon, index) => ({
-    //       key: String(index + 1),
-    //       icon: React.createElement(icon),
-    //       label: `nav ${index + 1}`,
-    //     }),
-    //   );
 
     const items = [
         {

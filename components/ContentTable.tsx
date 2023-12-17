@@ -25,7 +25,7 @@ const columns: ColumnsType<DataType> = [
         </div>
         }
       </div>
-    ) 
+    ),
   },
   {
     title: 'Status',
