@@ -1,43 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button, Divider, Radio, Table } from 'antd';
+import { Button, Divider, Image, Radio, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 
-interface Voucher {
-  name: string
-  details: string
-}
-interface DataType {
-  key: React.Key,
-  id: {
-    user_id: string,
-    employee_id?: string,
-    created_at: string,
-    first_login_at?: string
-  };
-  status: {
-    last_booking_at: string,
-    last_active?: string,
-    status: string
-  }
-  name: {
-    name: string,
-    gender: string,
-    company?: string,
-    department?: string,
-  };
-  contact: {
-    mobile_number: string,
-    email: string,
-  }
-  address: {
-    home: string,
-    work: string
-  }
-  trip?: number | null;
-  voucher?: Voucher[]
-}
+import { data, DataType, Voucher } from '../data/tableData'
 
 const columns: ColumnsType<DataType> = [
   {
@@ -73,6 +40,7 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'name',
     render: (name: any) => (
       <div>
+        <Image src={name.picture}/>
         <p className='pb-2 font-semibold'>{name.name}</p>
         <p className='pb-2 text-gray-600'>{name.gender}</p>
         <p className='text-gray-600'>Company</p>
@@ -122,15 +90,6 @@ const columns: ColumnsType<DataType> = [
       </div>
     ) 
   },
-  // {
-  //   title: 'Voucher',
-  //   dataIndex: 'voucher',
-  //   render: (voucher) => { voucher.map((v: Voucher, i: number) => {
-  //     return (
-  //       <div>{v.name}</div>
-  //     )
-  //   }) }
-  // },
   {
     title: 'Voucher',
     dataIndex: 'voucher',
@@ -169,112 +128,6 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-// const columns2: ColumnsType<DataType> = [
-//   {
-//     title: 'ID',
-//     dataIndex: 'id',
-//     render: (text: string) => <a>{text}</a>,
-//   },
-//   {
-//     title: 'Status',
-//     dataIndex: 'status',
-//   },
-//   {
-//     title: 'Name',
-//     dataIndex: 'name',
-//   },
-//   {
-//     title: 'Contact',
-//     dataIndex: 'contact',
-//   },
-//   {
-//     title: 'Adress',
-//     dataIndex: 'adress',
-//   },
-//   {
-//     title: 'Trip',
-//     dataIndex: 'trip',
-//   },
-//   {
-//     title: 'Voucher',
-//     dataIndex: 'name',
-//   },
-//   {
-//     title: 'Action',
-//     dataIndex: 'action',
-//   },
-// ];
-
-const data: DataType[] = [
-  {
-    key: 457,
-    id: {
-      user_id: '457',
-      employee_id: 'BAS-51243',
-      created_at: '9 Jun 2022',
-      first_login_at: '22 Nov 2022' 
-    },
-    status: {
-      last_booking_at: '-',
-      last_active: '-',
-      status: 'Lead',
-  },
-    name: {
-      name: 'Ruben Tornado',
-      gender: 'Male',
-      company: 'SKTrans',
-      department: 'Processing'
-    },
-    contact: {
-      mobile_number: '+62 812 3546 7890',
-      email: 'rubentornado@email.com'
-    },
-    address: {
-      home: 'Master Pro Kecamatan Serpong, Kota Tangerang Selatan',
-      work: 'Grand Indonesia Kecamatan  Menteng, Kota Jakarta Pusat'
-    },
-    trip: 32,
-    voucher: [
-      {
-        name: 'Flexi',
-        details: `
-          Flexi Pass 5X • 5X
-          Trips
-          BSD <-> SCBD
-          
-          Flexi Pass 3X • 3X
-          Trips
-          BSD <-> SCBD`
-      },
-      {
-        name: 'Bundle',
-        details: `
-          Kemerdekaan
-          BSD <-> SCBD
-          View Details`
-      }
-    ],
-  },
-  // {
-  //   key: '2',
-  //   name: 'Jim Green',
-  //   age: 42,
-  //   address: 'London No. 1 Lake Park',
-  // },
-  // {
-  //   key: '3',
-  //   name: 'Joe Black',
-  //   age: 32,
-  //   address: 'Sydney No. 1 Lake Park',
-  // },
-  // {
-  //   key: '4',
-  //   name: 'Disabled User',
-  //   age: 99,
-  //   address: 'Sydney No. 1 Lake Park',
-  // },
-];
-
 // rowSelection object indicates the need for row selection
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
@@ -291,17 +144,6 @@ const ContentTable = () => {
 
   return (
     <div>
-      {/* <Radio.Group
-        onChange={({ target: { value } }) => {
-          setSelectionType(value);
-        }}
-        value={'checkbox'}
-      >
-        <Radio value="checkbox">Checkbox</Radio>
-      </Radio.Group> */}
-
-      <Divider />
-
       <Table
         rowSelection={{
           type: 'checkbox',
