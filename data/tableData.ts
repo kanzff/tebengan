@@ -36,7 +36,7 @@ export interface DataType {
 
 export const data: DataType[] = [
     {
-      key: 457,
+      key: 1,
       id: {
         user_id: '457',
         employee_id: 'BAS-51243',
@@ -63,51 +63,32 @@ export const data: DataType[] = [
         home: 'Master Pro Kecamatan Serpong, Kota Tangerang Selatan',
         work: 'Grand Indonesia Kecamatan  Menteng, Kota Jakarta Pusat'
       },
-      trip: 32,
-      voucher: [
-        {
-          name: 'Flexi',
-          details: `
-            Flexi Pass 5X • 5X
-            Trips
-            BSD <-> SCBD
-            
-            Flexi Pass 3X • 3X
-            Trips
-            BSD <-> SCBD`
-        },
-        {
-          name: 'Bundle',
-          details: `
-            Kemerdekaan
-            BSD <-> SCBD
-            View Details`
-        }
-      ],
+      trip: null,
+      voucher: [],
     },
     {
-        key: 457,
+        key: 2,
         id: {
           user_id: '457',
-          employee_id: 'BAS-51243',
+          employee_id: '',
           created_at: '9 Jun 2022',
-          first_login_at: '22 Nov 2022' 
+          first_login_at: '' 
         },
         status: {
-          last_booking_at: '-',
-          last_active: '-',
-          status: 'Lead',
+          last_booking_at: '2 May 2022',
+          last_active: '1 day ago',
+          status: 'Active',
       },
         name: {
-          name: 'Ruben Tornado',
-          gender: 'Male',
-          company: 'SKTrans',
-          department: 'Processing',
-          picture: '/teb_prof_1.png'
+          name: 'Kierra Calzoni',
+          gender: 'Female',
+          company: '',
+          department: '',
+          picture: '/teb_prof_2.png'
         },
         contact: {
           mobile_number: '+62 812 3546 7890',
-          email: 'rubentornado@email.com'
+          email: 'kierracalzoni@email.com'
         },
         address: {
           home: 'Master Pro Kecamatan Serpong, Kota Tangerang Selatan',
@@ -136,57 +117,38 @@ export const data: DataType[] = [
         ],
       },
       {
-        key: 457,
+        key: 3,
         id: {
           user_id: '457',
           employee_id: 'BAS-51243',
           created_at: '9 Jun 2022',
-          first_login_at: '22 Nov 2022' 
+          first_login_at: '' 
         },
         status: {
-          last_booking_at: '-',
-          last_active: '-',
-          status: 'Lead',
+          last_booking_at: '9 Jun 2022',
+          last_active: '56 days ago',
+          status: 'Recent',
       },
         name: {
-          name: 'Ruben Tornado',
+          name: 'Kristianto',
           gender: 'Male',
-          company: 'SKTrans',
-          department: 'Processing',
-          picture: '/teb_prof_1.png'
+          company: 'Toyota Tsusho',
+          department: 'Chemicals',
+          picture: '/teb_prof_3.png'
         },
         contact: {
           mobile_number: '+62 812 3546 7890',
-          email: 'rubentornado@email.com'
+          email: 'kristianto@email.com'
         },
         address: {
           home: 'Master Pro Kecamatan Serpong, Kota Tangerang Selatan',
           work: 'Grand Indonesia Kecamatan  Menteng, Kota Jakarta Pusat'
         },
         trip: 32,
-        voucher: [
-          {
-            name: 'Flexi',
-            details: `
-              Flexi Pass 5X • 5X
-              Trips
-              BSD <-> SCBD
-              
-              Flexi Pass 3X • 3X
-              Trips
-              BSD <-> SCBD`
-          },
-          {
-            name: 'Bundle',
-            details: `
-              Kemerdekaan
-              BSD <-> SCBD
-              View Details`
-          }
-        ],
+        voucher: [],
       },
       {
-        key: 457,
+        key: 4,
         id: {
           user_id: '457',
           employee_id: 'BAS-51243',
@@ -195,44 +157,25 @@ export const data: DataType[] = [
         },
         status: {
           last_booking_at: '-',
-          last_active: '-',
-          status: 'Lead',
+          last_active: '125 days ago',
+          status: 'Inactive',
       },
         name: {
-          name: 'Ruben Tornado',
+          name: 'Waluyo Brahmono Paulo Margono',
           gender: 'Male',
-          company: 'SKTrans',
+          company: 'Toyota Tsusho',
           department: 'Processing',
-          picture: '/teb_prof_1.png'
+          picture: '/teb_prof_4.png'
         },
         contact: {
           mobile_number: '+62 812 3546 7890',
-          email: 'rubentornado@email.com'
+          email: '-'
         },
         address: {
           home: 'Master Pro Kecamatan Serpong, Kota Tangerang Selatan',
           work: 'Grand Indonesia Kecamatan  Menteng, Kota Jakarta Pusat'
         },
-        trip: 32,
-        voucher: [
-          {
-            name: 'Flexi',
-            details: `
-              Flexi Pass 5X • 5X
-              Trips
-              BSD <-> SCBD
-              
-              Flexi Pass 3X • 3X
-              Trips
-              BSD <-> SCBD`
-          },
-          {
-            name: 'Bundle',
-            details: `
-              Kemerdekaan
-              BSD <-> SCBD
-              View Details`
-          }
-        ],
+        trip: 1,
+        voucher: [],
       },
   ];

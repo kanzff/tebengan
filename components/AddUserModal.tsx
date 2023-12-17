@@ -1,4 +1,4 @@
-import { Button, Checkbox, Input, Modal, Radio, Select, Space, TimePicker } from 'antd'
+import { Button, Checkbox, Image, Input, Modal, Radio, Select, Space, TimePicker } from 'antd'
 import React from 'react'
 
 interface dataFormProps{
@@ -16,6 +16,14 @@ const AddUserModal = ({showModal, isModalOpen, handleOk, handleCancel}: dataForm
       </Button> */}
       <Modal width={'600px'} title="Add New User" okButtonProps={{className: 'bg-blue-400'}} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <div className='text-[12px]'>
+            <div className='w-full flex justify-center'>
+                <div>
+                    <div>Profile Photo</div>
+                    <div className='flex justify-center my-2 border rounded-full p-6 bg-blue-100'>
+                        <Image src='/camera.png'/>
+                    </div>
+                </div>
+            </div>
             <div>Full Name</div>
             <Input placeholder='Enter fullname'/>
             <div className='mt-2'>Gender</div>

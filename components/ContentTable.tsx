@@ -18,8 +18,12 @@ const columns: ColumnsType<DataType> = [
         <p className='font-bold text-black pb-2'>{id.employee_id}</p>
         <p>Date created</p>
         <p className='pb-1'>{id.created_at}</p>
-        <p>First app login on</p>
-        <p>{id.first_login_at}</p>
+        {id.first_login_at.length > 1 &&
+        <div>
+            <p>First app login on</p>
+            <p>{id.first_login_at}</p>
+        </div>
+        }
       </div>
     ) 
   },
@@ -28,7 +32,18 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'status',
     render: (status: any) => (
       <div className='text-gray-600'>
-        <p className='bg-blue-100 border rounded-lg max-w-[40px] text-center border-blue-500 font-bold text-blue-500'>{status.status}</p>
+        {status.status === 'Lead' &&
+          <p className='bg-blue-100 border rounded-lg max-w-[40px] text-center border-blue-500 font-semibold text-blue-500'>{status.status}</p>
+        }
+        {status.status === 'Active' &&
+          <p className='bg-green-100 border rounded-lg max-w-[60px] text-center border-green-500 font-semibold text-green-500'>{status.status}</p>
+        }
+        {status.status === 'Recent' &&
+          <p className='border rounded-lg max-w-[60px] text-center border-black text-black'>{status.status}</p>
+        }
+        {status.status === 'Inactive' &&
+          <p className='border rounded-lg max-w-[60px] text-center border-gray-400 font-bold text-gray-400'>{status.status}</p>
+        }
         <p>{status.last_active}</p>
         <p>Last booking</p>
         <p>{status.last_booking_at}</p>
@@ -85,8 +100,12 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'trip',
     render: (trip: any) => (
       <div>
-        <p>{trip} Total Trips</p>
-        <a className='text-blue-500' href="">View Details</a>
+        {!!trip &&
+        <div>
+          <p>{trip} Total Trips</p>
+          <a className='text-blue-500' href="">View Details</a>
+        </div>
+        }
       </div>
     ) 
   },
@@ -134,7 +153,7 @@ const rowSelection = {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
   },
   getCheckboxProps: (record: DataType) => ({
-    // disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    disabled: record.name.name === 'Disabled User', // Column configuration not to be checked
     name: record.name.name,
   }),
 };
