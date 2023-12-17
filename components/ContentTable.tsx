@@ -42,7 +42,7 @@ const columns: ColumnsType<DataType> = [
           <p className='border rounded-lg max-w-[60px] text-center border-black text-black'>{status.status}</p>
         }
         {status.status === 'Inactive' &&
-          <p className='border rounded-lg max-w-[60px] text-center border-gray-400 font-bold text-gray-400'>{status.status}</p>
+          <p className='border rounded-lg max-w-[70px] text-center border-gray-400 font-bold text-gray-400'>{status.status}</p>
         }
         <p>{status.last_active}</p>
         <p>Last booking</p>
@@ -72,7 +72,12 @@ const columns: ColumnsType<DataType> = [
       <div className='max-w-[190px]'>
         <p className='text-gray-600'>Mobile Number</p>
         <p className='pb-2 font-semibold'>{contact.mobile_number}</p>
-        <p className='text-gray-600'>Email</p>
+        <div className='flex'>
+          <p className='text-gray-600 mr-1'>Email</p>
+          {contact.email.length > 1 &&
+            <Image src='/badge-check.png'/>
+          }
+        </div>
         <p className='pb-2 font-semibold'>{contact.email}</p>
       </div>
     ) 
@@ -130,7 +135,7 @@ const columns: ColumnsType<DataType> = [
   {
     title: 'Action',
     dataIndex: 'action',
-    render: (action) => (
+    render: () => (
       <div>
         <div>
           <Button className='min-w-[120px] mb-2'>Edit</Button>

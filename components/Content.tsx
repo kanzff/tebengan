@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Button, Input } from 'antd'
-import { SearchOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import ContentTable from './ContentTable';
 import AddUserModal from './AddUserModal';
 
@@ -54,7 +54,7 @@ const Content = () => {
                     </div>
                 </div>
                 <div className='flex items-center'>
-                    <Button type="primary" onClick={showModal} className='bg-blue-100 text-[#1D8AF5] font-semibold' icon={<SearchOutlined />}>
+                    <Button type="primary" onClick={showModal} className='bg-blue-100 text-[#1D8AF5] font-semibold' icon={<PlusOutlined />}>
                         Add New User
                     </Button>
                 </div>

@@ -88,7 +88,7 @@ const Sidebar = () => {
             >
                 <MenuOutlined className='pl-8 my-4' />
                 <div className="demo-logo-vertical" />
-                <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} />
+                <Menu theme="dark" className='bg-white text-black font-semibold' mode="inline" defaultSelectedKeys={['1']} items={items} />
             </Sider>
         </div>
       );
