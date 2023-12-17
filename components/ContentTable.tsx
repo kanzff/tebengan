@@ -9,6 +9,7 @@ interface Voucher {
   details: string
 }
 interface DataType {
+  key: React.Key,
   id: {
     user_id: string,
     employee_id?: string,
@@ -136,9 +137,9 @@ const columns: ColumnsType<DataType> = [
     render: (voucher) => (
       <div>
         {
-          voucher.map((v: Voucher) => {
+          voucher.map((v: Voucher, i: number) => {
             return (
-              <div className='max-w-[130px] pr-4 mb-2'>
+              <div key={i} className='max-w-[130px] pr-4 mb-2'>
                 <p className='font-bold'>{v.name}</p>
                 <p>{v.details}</p>
               </div>
@@ -206,6 +207,7 @@ const columns: ColumnsType<DataType> = [
 
 const data: DataType[] = [
   {
+    key: 457,
     id: {
       user_id: '457',
       employee_id: 'BAS-51243',
