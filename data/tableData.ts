@@ -111,8 +111,7 @@ export const data: DataType[] = [
             name: 'Bundle',
             details: `
               Kemerdekaan
-              BSD <-> SCBD
-              View Details`
+              BSD <-> SCBD`
           }
         ],
       },

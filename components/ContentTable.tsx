@@ -11,7 +11,7 @@ const columns: ColumnsType<DataType> = [
     title: 'ID',
     dataIndex: 'id',
     render: (id: any) => (
-      <div className='text-gray-600 max-w-[180px]'>
+      <div className='text-gray-600 min-w-[150px] max-w-[180px]'>
         <p>User ID</p>
         <p className='font-bold text-black pb-2'>{id.user_id}</p>
         <p>Employee ID</p>
@@ -31,7 +31,7 @@ const columns: ColumnsType<DataType> = [
     title: 'Status',
     dataIndex: 'status',
     render: (status: any) => (
-      <div className='text-gray-600'>
+      <div className='text-gray-600 min-w-[130px]'>
         {status.status === 'Lead' &&
           <p className='bg-blue-100 border rounded-lg max-w-[40px] text-center border-blue-500 font-semibold text-blue-500'>{status.status}</p>
         }
@@ -54,7 +54,7 @@ const columns: ColumnsType<DataType> = [
     title: 'Name',
     dataIndex: 'name',
     render: (name: any) => (
-      <div>
+      <div className='max-w-[180px]'>
         <Image src={name.picture}/>
         <p className='pb-2 font-semibold'>{name.name}</p>
         <p className='pb-2 text-gray-600'>{name.gender}</p>
@@ -86,16 +86,20 @@ const columns: ColumnsType<DataType> = [
     title: 'Address',
     dataIndex: 'address',
     render: (address: any) => (
-      <div className='flex'>
+      <div className='flex gap-2'>
         <div className='max-w-[160px]'>
           <p className='text-gray-600'>Home</p>
           <p className='pb-2 font-semibold'>{address.home}</p>
           <a className='text-blue-500' href="">View Map</a>
+          <div className='text-gray-500 mt-8'>Depart at 08:00</div>
+          <div className='text-gray-500'>Arrival at 19:00</div>
         </div>
         <div className='max-w-[160px]'>
           <p className='text-gray-600'>Work</p>
           <p className='pb-2 font-semibold'>{address.work}</p>
           <a className='text-blue-500' href="">View Map</a>
+          <div className='text-gray-500 mt-8'>Depart at 17:00</div>
+          <div className='text-gray-500'>Arrival at 10:00</div>
         </div>
       </div>
     ) 
@@ -128,6 +132,9 @@ const columns: ColumnsType<DataType> = [
               </div>
             )
           })
+        }
+        {!!voucher.length &&
+          <a className='text-blue-500' href="">View Details</a>
         }
       </div>
     )
