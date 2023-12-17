@@ -30,8 +30,9 @@ const Content = () => {
         <AddUserModal showModal={showModal} isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel}/>
         <div className='bg-white rounded-md p-6'>
             <div className='flex justify-between mb-6'>
-                <div className='flex gap-2 divide-x divide-black'>
-                    <div>
+                <div className='flex gap-2 divide-x-2 divide-black'>
+                    <div></div>
+                    <div className='pl-2'>
                         <div className='font-semibold'>456</div>
                         <div>Total Users</div>
                     </div>

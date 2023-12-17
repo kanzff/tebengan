@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuOutlined } from '@ant-design/icons';
 
 const  { Sider } = Layout
 
@@ -69,6 +69,7 @@ const Sidebar = () => {
                 console.log(collapsed, type);
                 }}
             >
+                <MenuOutlined className='pl-7 my-4' />
                 <div className="demo-logo-vertical" />
                 <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} />
             </Sider>
